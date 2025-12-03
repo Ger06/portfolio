@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import Link from "next/link";
@@ -10,6 +11,14 @@ import { translations } from "@/lib/translations";
 export function Hero() {
   const { language } = useLanguage();
   const t = translations[language];
+  const [isCentered, setIsCentered] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsCentered(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -45,17 +54,39 @@ export function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-20 relative">
+        {/* Animated Welcome Message */}
+        <motion.div
+          layout
+          transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
+          className={
+            isCentered
+              ? "absolute inset-0 flex items-center justify-center z-50 pointer-events-none"
+              : "relative mb-2 text-center"
+          }
+          style={isCentered ? { position: "absolute", height: "100vh", top: "-20vh" } : {}}
+        >
+          <span
+            className={
+              isCentered
+                ? "text-4xl md:text-7xl font-bold text-primary bg-background/50 backdrop-blur-sm p-4 rounded-xl"
+                : "text-primary text-lg font-medium"
+            }
+          >
+            {t.hero.welcome}
+          </span>
+        </motion.div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={!isCentered ? "visible" : "hidden"}
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Greeting */}
+          {/* Greeting continuation */}
           <motion.div variants={itemVariants} className="mb-6">
             <span className="text-primary text-lg font-medium">
-              {t.hero.greeting}
+              {t.hero.introduce}
             </span>
           </motion.div>
 
@@ -141,7 +172,7 @@ export function Hero() {
         {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: !isCentered ? 1 : 0, y: 0 }}
           transition={{
             duration: 0.6,
             delay: 1.5,

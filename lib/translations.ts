@@ -15,7 +15,8 @@ export const translations = {
       description: "Con más de 3 años de experiencia como Full Stack Developer, participé en el desarrollo y mantenimiento de aplicaciones escalables del lado del cliente y del servidor. Me enfoco en optimizar la experiencia de usuario y garantizar la seguridad en el manejo de datos.",
     },
     hero: {
-      greeting: "Hola, soy",
+      welcome: "¡Hola mundo!",
+      introduce: "Soy",
       downloadCV: "Descargar CV",
       contactMe: "Contáctame",
     },
@@ -201,7 +202,8 @@ export const translations = {
       description: "With over 3 years of experience as a Full Stack Developer, I've participated in the development and maintenance of scalable client-side and server-side applications. I focus on optimizing user experience and ensuring data security.",
     },
     hero: {
-      greeting: "Hi, I'm",
+      welcome: "Hello world!",
+      introduce: "I'm",
       downloadCV: "Download CV",
       contactMe: "Contact Me",
     },

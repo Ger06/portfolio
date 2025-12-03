@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
 import { Navbar } from "@/components/navbar";
+import { MonitorWrapper } from "@/components/retro/monitor-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={inter.className}>
@@ -39,8 +42,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <MonitorWrapper>
             <Navbar />
             <main>{children}</main>
+            </MonitorWrapper>
           </ThemeProvider>
         </LanguageProvider>
       </body>
