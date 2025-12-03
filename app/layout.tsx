@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
 import { Navbar } from "@/components/navbar";
 import { MonitorWrapper } from "@/components/retro/monitor-wrapper";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,6 +46,7 @@ export default function RootLayout({
             <MonitorWrapper>
             <Navbar />
             <main>{children}</main>
+            <Toaster />
             </MonitorWrapper>
           </ThemeProvider>
         </LanguageProvider>

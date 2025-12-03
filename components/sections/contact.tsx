@@ -2,16 +2,20 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Linkedin, Github, MapPin, Send } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin, Send, Loader2 } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import { useLanguage } from "@/components/language-provider";
 import { translations } from "@/lib/translations";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 
 export function Contact() {
   const { language } = useLanguage();
   const t = translations[language];
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,10 +43,31 @@ export function Contact() {
     },
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:${personalInfo.email}?subject=Contacto desde portfolio - ${formData.name}&body=${formData.message}%0D%0A%0D%0AEmail: ${formData.email}`;
-    window.location.href = mailtoLink;
+    setIsLoading(true);
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          to_name: personalInfo.name,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+      );
+
+      toast.success(language === "es" ? "Mensaje enviado con éxito" : "Message sent successfully");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error(language === "es" ? "Error al enviar el mensaje" : "Error sending message");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (
@@ -144,7 +169,7 @@ export function Contact() {
 
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label
                     htmlFor="name"
@@ -159,7 +184,8 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all disabled:opacity-50"
                     placeholder={t.contact.form.namePlaceholder}
                   />
                 </div>
@@ -178,7 +204,8 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all disabled:opacity-50"
                     placeholder={t.contact.form.emailPlaceholder}
                   />
                 </div>
@@ -197,17 +224,23 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none disabled:opacity-50"
                     placeholder={t.contact.form.messagePlaceholder}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2"
+                  disabled={isLoading}
+                  className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-5 h-5" />
-                  {t.contact.form.send}
+                  {isLoading ? (
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                  ) : (
+                    <Send className="w-5 h-5" />
+                  )}
+                  {isLoading ? (language === "es" ? "Enviando..." : "Sending...") : t.contact.form.send}
                 </button>
               </form>
             </motion.div>
