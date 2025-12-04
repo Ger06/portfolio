@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Moon, Sun, Menu, X, Languages } from "lucide-react";
-import { useTheme } from "./theme-provider";
+import { Menu, X, Languages } from "lucide-react";
 import { useLanguage } from "./language-provider";
 import { translations } from "@/lib/translations";
 import { cn } from "@/lib/utils";
@@ -23,7 +22,6 @@ const getNavItems = (t: any) => [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
   const { language, setLanguage } = useLanguage();
   const t = translations[language];
   const navItems = getNavItems(t);
@@ -36,10 +34,6 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   const toggleLanguage = () => {
     setLanguage(language === "es" ? "en" : "es");
@@ -75,22 +69,10 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Theme Toggle, Language Toggle & Mobile Menu Button */}
-          <div className="flex items-center space-x-2 md:space-x-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-accent transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </button>
-
-            <button
-              onClick={toggleLanguage}
+            {/* Language Toggle & Mobile Menu Button */}
+            <div className="flex items-center space-x-2 md:space-x-4">
+              <button
+                onClick={toggleLanguage}
               className="p-2 rounded-lg hover:bg-accent transition-colors flex items-center gap-1"
               aria-label="Toggle language"
             >

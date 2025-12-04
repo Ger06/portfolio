@@ -10,6 +10,7 @@ type ThemeProviderProps = {
   enableSystem?: boolean;
   attribute?: string;
   disableTransitionOnChange?: boolean;
+  forcedTheme?: Theme;
 };
 
 type ThemeProviderState = {
