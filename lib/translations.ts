@@ -108,16 +108,16 @@ export const translations = {
       highlights: "Características destacadas:",
       projects: [
         {
-          title: "Tallaje Inteligente - Línea Aérea",
-          description: "Sistema backend para sugerir tallas de uniformes según medidas corporales del personal de dotación aérea.",
+          title: "Futbol App",
+          description: "Aplicación de resultados de partidos en vivo, fixtures y tablas de posiciones de las ligas más importantes del mundo.",
           highlights: [
-            "Algoritmo de recomendación de tallas",
-            "Gestión de inventario de prendas",
-            "Almacenamiento de imágenes en S3",
-            "API REST robusta",
+            "Resultados en tiempo real",
+            "Tablas de posiciones dinámicas",
+            "Diseño responsive y moderno",
+            "Base de datos optimizada con Neon (PostgreSQL)",
           ],
-          period: "2025",
-          type: "Freelance",
+          period: "2024",
+          type: "Personal",
         },
         {
           title: "SPA Videogames",
@@ -295,16 +295,16 @@ export const translations = {
       highlights: "Key features:",
       projects: [
         {
-          title: "Smart Sizing - Airline",
-          description: "Backend system to suggest uniform sizes based on body measurements for airline crew members.",
+          title: "Futbol App",
+          description: "Live score application, fixtures, and standings for the world's most important leagues.",
           highlights: [
-            "Size recommendation algorithm",
-            "Garment inventory management",
-            "Image storage in S3",
-            "Robust REST API",
+            "Real-time scores",
+            "Dynamic standings tables",
+            "Modern and responsive design",
+            "Optimized database with Neon (PostgreSQL)",
           ],
-          period: "2025",
-          type: "Freelance",
+          period: "2024",
+          type: "Personal",
         },
         {
           title: "SPA Videogames",
