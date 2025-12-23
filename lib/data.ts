@@ -111,7 +111,7 @@ export const projects = [
       "Base de datos optimizada con Neon (PostgreSQL)",
     ],
     link: "https://futbol-app-iota.vercel.app/",
-    period: "2024",
+    period: "2025",
     type: "Personal",
   },
   {
