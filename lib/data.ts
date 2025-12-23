@@ -101,17 +101,18 @@ export const skills = {
 
 export const projects = [
   {
-    title: "Tallaje Inteligente - Línea Aérea",
-    description: "Sistema backend para sugerir tallas de uniformes según medidas corporales del personal de dotación aérea.",
-    technologies: ["Java", "Spring Boot", "MySQL", "AWS S3"],
+    title: "Futbol App",
+    description: "Aplicación de resultados de partidos en vivo, fixtures y tablas de posiciones de las ligas más importantes del mundo.",
+    technologies: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
     highlights: [
-      "Algoritmo de recomendación de tallas",
-      "Gestión de inventario de prendas",
-      "Almacenamiento de imágenes en S3",
-      "API REST robusta",
+      "Resultados en tiempo real",
+      "Tablas de posiciones dinámicas",
+      "Diseño responsive y moderno",
+      "Base de datos optimizada con Neon (PostgreSQL)",
     ],
-    period: "2025",
-    type: "Freelance",
+    link: "https://futbol-app-iota.vercel.app/",
+    period: "2024",
+    type: "Personal",
   },
   {
     title: "SPA Videogames",
