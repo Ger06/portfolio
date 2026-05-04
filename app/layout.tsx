@@ -11,12 +11,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "GK | Full Stack Developer",
-  description: "Full Stack Developer con más de 3 años de experiencia en React, Next.js, Node.js y TypeScript. Portfolio profesional con proyectos de e-commerce, aplicaciones web y backend.",
+  description: "Full Stack Developer con 4 años de experiencia en React, Next.js, Node.js y TypeScript. Portfolio profesional con proyectos de e-commerce, aplicaciones web y backend.",
   keywords: ["Full Stack Developer", "React", "Next.js", "Node.js", "TypeScript", "Gerardo Kohatus", "Portfolio", "Desarrollador Web"],
   authors: [{ name: "Gerardo Kohatus" }],
   openGraph: {
     title: "Gerardo Kohatus | Full Stack Developer",
-    description: "Full Stack Developer con más de 3 años de experiencia",
+    description: "Full Stack Developer con 4 años de experiencia",
     type: "website",
     locale: "es_AR",
   },

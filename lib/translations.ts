@@ -12,7 +12,7 @@ export const translations = {
       name: "Gerardo Kohatus",
       title: "Full Stack Developer",
       location: "Buenos Aires, Argentina",
-      description: "Con más de 3 años de experiencia como Full Stack Developer, participé en el desarrollo y mantenimiento de aplicaciones escalables del lado del cliente y del servidor. Me enfoco en optimizar la experiencia de usuario y garantizar la seguridad en el manejo de datos.",
+      description: "Con 4 años de experiencia como Full Stack Developer, participé en el desarrollo y mantenimiento de aplicaciones escalables del lado del cliente y del servidor. Me enfoco en optimizar la experiencia de usuario y garantizar la seguridad en el manejo de datos.",
     },
     hero: {
       welcome: "¡Hola mundo!",
@@ -26,7 +26,7 @@ export const translations = {
       highlights: [
         {
           title: "Full Stack Developer",
-          description: "3+ años de experiencia desarrollando aplicaciones web escalables",
+          description: "4 años de experiencia desarrollando aplicaciones web escalables",
         },
         {
           title: "Experiencia Profesional",

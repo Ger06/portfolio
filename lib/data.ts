@@ -6,7 +6,7 @@ export const personalInfo = {
   phone: "+54 9 11 3027 8472",
   linkedin: "https://linkedin.com/in/gerardo-kohatus",
   github: "https://github.com/Ger06",
-  description: "Con más de 3 años de experiencia como Full Stack Developer, participé en el desarrollo y mantenimiento de aplicaciones escalables del lado del cliente y del servidor. Me enfoco en optimizar la experiencia de usuario y garantizar la seguridad en el manejo de datos.",
+  description: "Con 4 años de experiencia como Full Stack Developer, participé en el desarrollo y mantenimiento de aplicaciones escalables del lado del cliente y del servidor. Me enfoco en optimizar la experiencia de usuario y garantizar la seguridad en el manejo de datos.",
 };
 
 export const experiences = [
