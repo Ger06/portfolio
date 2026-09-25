@@ -10,7 +10,7 @@ interface TerminalIntroProps {
 export function TerminalIntro({ onComplete }: TerminalIntroProps) {
   const [text, setText] = useState("");
   const [showLogs, setShowLogs] = useState(false);
-  const fullCommand = "pnpm run dev";
+  const fullCommand = "npm run dev";
 
   useEffect(() => {
     let currentIndex = 0;

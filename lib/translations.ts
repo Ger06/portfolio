@@ -52,6 +52,17 @@ export const translations = {
       current: "Actualidad",
       experiences: [
         {
+          title: "Full Stack Developer",
+          company: "Grupo Aberasturi",
+          period: "Marzo 2026 - Actualidad",
+          description: "Plataforma de Remates Ganadero",
+          responsibilities: [
+            "Implementé un sistema de pujas en tiempo real basado en eventos, sincronizando el estado de la subasta: precio actual, lotes y saldo del comprador",
+            "Construí un servidor de streaming de video propio en Node.js usando WebRTC (MediaSoup + Socket.IO), desacoplado del backend principal, transmitiendo la señal del rematador a ~30 participantes por remate sin replicar el costo de encoding por cliente",
+            "Gestioné el ciclo de vida completo de una subasta en una plataforma PHP/Laravel (pendiente → activa → finalizada), con chat en vivo entre rematador y compradores y notificaciones automáticas por email al ganador",
+          ],
+        },
+        {
           title: "Backend Developer",
           company: "Freelance",
           period: "Mayo 2025 - Actualidad",
@@ -108,15 +119,27 @@ export const translations = {
       highlights: "Características destacadas:",
       projects: [
         {
-          title: "Futbol App",
-          description: "Aplicación de resultados de partidos en vivo, fixtures y tablas de posiciones de las ligas más importantes del mundo.",
+          title: "Job Search Copilot",
+          description: "Copiloto con IA para búsquedas laborales: adapta el CV y la carta de presentación a cada oferta usando RAG sobre un banco de bullets propio como fuente de verdad.",
           highlights: [
-            "Resultados en tiempo real",
-            "Tablas de posiciones dinámicas",
-            "Diseño responsive y moderno",
-            "Base de datos optimizada con Neon (PostgreSQL)",
+            "Retrieval semántico con embeddings y pgvector en Supabase",
+            "Agente de CV con fit score y validaciones contra contenido inventado",
+            "Importación de CV desde PDF/DOCX con parsing por LLM (Groq)",
+            "Arquitectura Ports & Adapters y tests con Vitest",
           ],
-          period: "2024",
+          period: "2026",
+          type: "Personal",
+        },
+        {
+          title: "Training App",
+          description: "Aplicación de gestión de entrenamientos para entrenadores y alumnos, construida con Next.js (UI y API en un mismo proyecto) y MongoDB.",
+          highlights: [
+            "Desarrollo guiado por specs (SDD) y TDD",
+            "Lógica de dominio pura, desacoplada de React y MongoDB",
+            "Autenticación propia: sesiones en MongoDB, scrypt y cookies firmadas con HMAC",
+            "Migraciones versionadas con validación $jsonSchema",
+          ],
+          period: "2025",
           type: "Personal",
         },
         {
@@ -127,18 +150,6 @@ export const translations = {
             "Geolocalización en mapa interactivo",
             "Manejo de colas con Celery y Redis",
             "Consultas espaciales optimizadas con PostGIS",
-          ],
-          period: "2024",
-          type: "Personal",
-        },
-        {
-          title: "Trainning App",
-          description: "Plataforma integral de entrenamiento donde los profesores gestionan rutinas personalizadas, ejercicios, repeticiones y descansos para sus alumnos.",
-          highlights: [
-            "Creación de rutinas personalizadas",
-            "Gestión completa de ejercicios y series",
-            "Arquitectura monorepo escalable",
-            "API documentada con Swagger",
           ],
           period: "2024",
           type: "Personal",
@@ -242,6 +253,17 @@ export const translations = {
       experiences: [
         {
           title: "Full Stack Developer",
+          company: "Grupo Aberasturi",
+          period: "March 2026 - Present",
+          description: "Livestock Auction Platform",
+          responsibilities: [
+            "Implemented an event-driven real-time bidding system, synchronizing auction state: current price, lots, and buyer balance",
+            "Built a standalone video streaming server in Node.js using WebRTC (MediaSoup + Socket.IO), decoupled from the main backend, broadcasting the auctioneer's feed to ~30 participants per auction without per-client encoding overhead",
+            "Managed the complete auction lifecycle on a PHP/Laravel platform (pending → active → finished), including live chat between auctioneer and buyers and automated email notifications to the winning bidder",
+          ],
+        },
+        {
+          title: "Full Stack Developer",
           company: "Freelance",
           period: "May 2025 - Present",
           description: "Airline Project",
@@ -297,15 +319,27 @@ export const translations = {
       highlights: "Key features:",
       projects: [
         {
-          title: "Futbol App",
-          description: "Live score application, fixtures, and standings for the world's most important leagues.",
+          title: "Job Search Copilot",
+          description: "AI-powered job search copilot that tailors CVs and cover letters to each job posting using RAG over a personal bullet bank as the source of truth.",
           highlights: [
-            "Real-time scores",
-            "Dynamic standings tables",
-            "Modern and responsive design",
-            "Optimized database with Neon (PostgreSQL)",
+            "Semantic retrieval with embeddings and pgvector on Supabase",
+            "CV agent with fit score and guards against fabricated content",
+            "CV import from PDF/DOCX with LLM parsing (Groq)",
+            "Ports & Adapters architecture, tested with Vitest",
           ],
           period: "2026",
+          type: "Personal",
+        },
+        {
+          title: "Training App",
+          description: "Training management app for coaches and students, built with Next.js (UI and API in a single project) and MongoDB.",
+          highlights: [
+            "Spec-Driven Development (SDD) and TDD",
+            "Pure domain logic, decoupled from React and MongoDB",
+            "Custom auth: MongoDB sessions, scrypt hashing, and HMAC-signed cookies",
+            "Versioned migrations with $jsonSchema validation",
+          ],
+          period: "2025",
           type: "Personal",
         },
         {
@@ -318,18 +352,6 @@ export const translations = {
             "Spatial queries optimized with PostGIS",
           ],
           period: "2026",
-          type: "Personal",
-        },
-        {
-          title: "Trainning App",
-          description: "Comprehensive training platform where coaches manage personalized routines, exercises, repetitions, and rest periods for their students.",
-          highlights: [
-            "Personalized routine creation",
-            "Complete exercise and set management",
-            "Scalable monorepo architecture",
-            "API documented with Swagger",
-          ],
-          period: "2025",
           type: "Personal",
         },
       ],
