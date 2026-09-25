@@ -175,7 +175,7 @@ export const projects = [
     ],
     link: "https://real-estate-investment-theta.vercel.app/",
     github: "https://github.com/Ger06/Real-Estate-Investment",
-    period: "2024",
+    period: "2026",
     type: "Personal",
   },
 ];

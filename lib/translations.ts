@@ -165,7 +165,7 @@ export const translations = {
             "Manejo de colas con Celery y Redis",
             "Consultas espaciales optimizadas con PostGIS",
           ],
-          period: "2024",
+          period: "2026",
           type: "Personal",
         },
       ],
