@@ -1,13 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Briefcase, Heart } from "lucide-react";
+import {
+  Code2,
+  Briefcase,
+  Heart,
+  Bot,
+  FileText,
+  FlaskConical,
+  Sparkles,
+} from "lucide-react";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { useLanguage } from "@/components/language-provider";
 import { translations } from "@/lib/translations";
 
 const highlightIcons = [Code2, Briefcase, Heart];
+const aiDevIcons = [Bot, FileText, FlaskConical, Sparkles];
 
 export function About() {
   const { language } = useLanguage();
@@ -92,12 +101,33 @@ export function About() {
             variants={itemVariants}
             className="bg-card border border-border rounded-lg p-8"
           >
-            <h3 className="text-2xl font-bold mb-4">{t.about.journey.title}</h3>
-            <div className="space-y-4 text-muted-foreground">
-              {t.about.journey.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </div>
+            <h3 className="text-2xl font-bold mb-6">{t.about.aiDev.title}</h3>
+            <motion.div
+              variants={containerVariants}
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            >
+              {t.about.aiDev.items.map((item, index) => {
+                const Icon = aiDevIcons[index];
+                return (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="flex items-start gap-4"
+                  >
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold mb-1">{item.title}</h4>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+            <p className="mt-6 text-muted-foreground italic">
+              {t.about.aiDev.closing}
+            </p>
           </motion.div>
         </motion.div>
       </div>

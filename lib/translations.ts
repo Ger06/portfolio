@@ -37,13 +37,27 @@ export const translations = {
           description: "Enfocado en aprender nuevas tecnologías y resolver problemas complejos",
         },
       ],
-      journey: {
-        title: "Mi trayectoria",
-        paragraphs: [
-          "Comencé mi camino en el desarrollo web en 2021 realizando un bootcamp intensivo de +700 horas en Soy Henry, donde me especialicé en el stack MERN.",
-          "Durante más de 3 años trabajé en Ai Monkey, donde participé en el desarrollo de múltiples proyectos: desde sistemas de e-commerce completos con integración de pagos, hasta aplicaciones sociales con sistemas complejos de permisos y colaboración en tiempo real.",
-          "Actualmente trabajo como Freelance, desarrollando soluciones backend con Java y Spring Boot, y continuando mi aprendizaje constante en nuevas tecnologías.",
+      aiDev: {
+        title: "Desarrollo con IA",
+        items: [
+          {
+            title: "IA en el día a día",
+            description: "Uso Claude Code como parte de mi flujo, con skills y hooks propios, y reviso con criterio cada línea generada antes de integrarla.",
+          },
+          {
+            title: "Spec-Driven Development",
+            description: "Cada feature arranca con una spec, un plan, tareas y una verificación. La IA implementa sobre specs, no improvisa.",
+          },
+          {
+            title: "TDD",
+            description: "Primero el test que falla, después el código. Hooks que bloquean el commit si los tests no pasan.",
+          },
+          {
+            title: "IA dentro del producto",
+            description: "RAG con embeddings y pgvector, y agentes LLM con validaciones contra contenido inventado.",
+          },
         ],
+        closing: "Es lo que más me motiva hoy y mi próximo paso: sigo probando herramientas, flujos y formas nuevas de construir software con IA.",
       },
     },
     experience: {
@@ -237,13 +251,27 @@ export const translations = {
           description: "Focused on learning new technologies and solving complex problems",
         },
       ],
-      journey: {
-        title: "My Journey",
-        paragraphs: [
-          "I started my journey in web development in 2021 by completing an intensive +700 hour bootcamp at Soy Henry, where I specialized in the MERN stack.",
-          "For over 3 years I worked at Ai Monkey, where I participated in the development of multiple projects: from complete e-commerce systems with payment integration, to social applications with complex permission systems and real-time collaboration.",
-          "I currently work as a Freelancer, developing backend solutions with Java and Spring Boot, and continuing my constant learning in new technologies.",
+      aiDev: {
+        title: "AI-Driven Development",
+        items: [
+          {
+            title: "AI in my daily workflow",
+            description: "Claude Code is part of my daily workflow, with custom skills and hooks, and I critically review every generated line before merging it.",
+          },
+          {
+            title: "Spec-Driven Development",
+            description: "Every feature starts with a spec, a plan, tasks, and verification. The AI builds from specs instead of improvising.",
+          },
+          {
+            title: "TDD",
+            description: "Failing test first, then the code. Hooks block the commit if the tests don't pass.",
+          },
+          {
+            title: "AI inside the product",
+            description: "RAG with embeddings and pgvector, plus LLM agents with guards against fabricated content.",
+          },
         ],
+        closing: "It's what motivates me most right now and my next step: I keep experimenting with new tools, workflows, and ways to build software with AI.",
       },
     },
     experience: {
