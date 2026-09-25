@@ -160,7 +160,7 @@ export const projects = [
       "Migraciones versionadas con $jsonSchema",
     ],
     github: "https://github.com/Ger06/trainning-app",
-    period: "2025",
+    period: "2026",
     type: "Personal",
   },
   {

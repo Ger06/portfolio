@@ -153,7 +153,7 @@ export const translations = {
             "Autenticación propia: sesiones en MongoDB, scrypt y cookies firmadas con HMAC",
             "Migraciones versionadas con validación $jsonSchema",
           ],
-          period: "2025",
+          period: "2026",
           type: "Personal",
         },
         {
@@ -369,7 +369,7 @@ export const translations = {
             "Custom auth: MongoDB sessions, scrypt hashing, and HMAC-signed cookies",
             "Versioned migrations with $jsonSchema validation",
           ],
-          period: "2025",
+          period: "2026",
           type: "Personal",
         },
         {
