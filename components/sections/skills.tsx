@@ -2,13 +2,13 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Server, Database, Wrench } from "lucide-react";
+import { Code2, Server, Database, Wrench, Sparkles } from "lucide-react";
 import { skills } from "@/lib/data";
 import { useLanguage } from "@/components/language-provider";
 import { translations } from "@/lib/translations";
 
-const categoryKeys = ["frontend", "backend", "database", "tools"];
-const categoryIcons = [Code2, Server, Database, Wrench];
+const categoryKeys = ["frontend", "backend", "database", "tools", "ai"];
+const categoryIcons = [Code2, Server, Database, Wrench, Sparkles];
 
 export function Skills() {
   const { language } = useLanguage();
@@ -61,12 +61,17 @@ export function Skills() {
               const Icon = categoryIcons[index];
               const key = categoryKeys[index];
               const skillList = skills[key as keyof typeof skills];
+              const isLastOdd =
+                index === t.skills.categories.length - 1 &&
+                t.skills.categories.length % 2 !== 0;
 
               return (
                 <motion.div
                   key={key}
                   variants={itemVariants}
-                  className="bg-card border border-border rounded-lg p-6"
+                  className={`bg-card border border-border rounded-lg p-6 ${
+                    isLastOdd ? "md:col-span-2" : ""
+                  }`}
                 >
                   <div className="flex items-center gap-3 mb-6">
                     <div className="p-2 bg-primary/10 rounded-lg">
@@ -75,7 +80,11 @@ export function Skills() {
                     <h3 className="text-2xl font-bold">{category.title}</h3>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div
+                    className={`grid grid-cols-2 sm:grid-cols-3 gap-3 ${
+                      isLastOdd ? "md:grid-cols-4" : ""
+                    }`}
+                  >
                     {skillList.map((skill, index) => (
                       <motion.div
                         key={index}
